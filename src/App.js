@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import queryString from "query-string"
 import './App.css';
 
 import questions from "./questions"
@@ -50,9 +49,10 @@ const WordOption = (props) => {
 class App extends Component {
   constructor(props) {
     super(props);
-    var rand = (min, max) => {return Math.floor(Math.random()*(max-min)+min);};
+    const rand = (min, max) => {return Math.floor(Math.random()*(max-min)+min);};
+    let unit = window.location.href.replace(/.*\?unit=([^&]*).*/, "$1");
     this.state = {
-        unit : queryString.parse(window.location.search).unit ? queryString.parse(window.location.search).unit : Object.keys(questions)[rand(0, Object.keys(questions).length)],
+        unit : unit ? unit : Object.keys(questions)[rand(0, Object.keys(questions).length)],
         index : 0,
         score : 0,
         questionRight : false,
