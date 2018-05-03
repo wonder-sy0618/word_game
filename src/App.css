@@ -1,0 +1,81 @@
+
+@font-face
+{
+  font-family: hanyipp;
+  src: url(./res/font/汉仪PP体简.ttf);
+}
+
+.App {
+  height: 300px;
+}
+
+.AppInner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('./res/theme/bg.png');
+  -moz-background-size: 100% 100%; /* 老版本的 Firefox */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.GameBox {
+  display: flex;
+  margin-left: 34%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+  margin-top: 5%;
+
+  font-family: hanyipp;
+  font-weight: bold;
+  color: #dcdcdcd4;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.GameBox .Scoreboard {
+  font-size: 24px;
+  text-align: right;
+}
+
+.GameBox .GamePanel {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.GameBox .Stage {
+  flex: 2 5;
+  padding: 20px;
+}
+
+.GameBox .WordOption {
+  flex: 3 5;
+  font-size: 30px;
+}
+
+.GameBox .WordOption .Options li {
+  line-height: 50px;
+  cursor: pointer;
+}
+
+.GameBox .Stage .WordImage {
+  flex: 1 2;
+  text-align: center;
+}
+
+.GameBox .Stage .StageBg {
+  flex: 1 2;
+}
+
+.GameBox .QuestionResult {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.GameBox .GameResult {
+  text-align: center;
+  font-size: 40px;
+}
