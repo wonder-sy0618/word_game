@@ -8,6 +8,15 @@ const Configure = {
     resultTimeout : 1500,
 };
 
+const getUrlParmar = function(name) {
+    var re = new RegExp("[\\?\\&]"+name+"=([^\\?\\&]*)", "ig");
+    var r = "";
+    while (r = re.exec(window.location.href)) {
+        var val = r[1];
+        return val;
+    }
+};
+
 const Scoreboard = (props) => (
   <div className="Scoreboard" >
     答题：{props.index}/{props.question.length}
@@ -50,7 +59,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     const rand = (min, max) => {return Math.floor(Math.random()*(max-min)+min);};
-    let unit = window.location.href.replace(/.*\?unit=([^&]*).*/, "$1");
+    let unit = getUrlParmar("unit");
     this.state = {
         unit : unit ? unit : Object.keys(questions)[rand(0, Object.keys(questions).length)],
         index : 0,
