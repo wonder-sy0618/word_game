@@ -50,6 +50,10 @@
   padding: 20px;
 }
 
+.GameBox .Stage img {
+  max-width: 300px;
+}
+
 .GameBox .WordOption {
   flex: 3 5;
   font-size: 30px;
